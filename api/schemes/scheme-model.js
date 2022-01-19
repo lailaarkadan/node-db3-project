@@ -2,7 +2,6 @@ function find() { // EXERCISE A
   /*
     1A- Study the SQL query below running it in SQLite Studio against `data/schemes.db3`.
     What happens if we change from a LEFT join to an INNER join?
-
       SELECT
           sc.*,
           count(st.step_id) as number_of_steps
@@ -11,7 +10,6 @@ function find() { // EXERCISE A
           ON sc.scheme_id = st.scheme_id
       GROUP BY sc.scheme_id
       ORDER BY sc.scheme_id ASC;
-
     2A- When you have a grasp on the query go ahead and build it in Knex.
     Return from this function the resulting dataset.
   */
@@ -20,7 +18,6 @@ function find() { // EXERCISE A
 function findById(scheme_id) { // EXERCISE B
   /*
     1B- Study the SQL query below running it in SQLite Studio against `data/schemes.db3`:
-
       SELECT
           sc.scheme_name,
           st.*
@@ -29,13 +26,10 @@ function findById(scheme_id) { // EXERCISE B
           ON sc.scheme_id = st.scheme_id
       WHERE sc.scheme_id = 1
       ORDER BY st.step_number ASC;
-
     2B- When you have a grasp on the query go ahead and build it in Knex
     making it parametric: instead of a literal `1` you should use `scheme_id`.
-
     3B- Test in Postman and see that the resulting data does not look like a scheme,
     but more like an array of steps each including scheme information:
-
       [
         {
           "scheme_id": 1,
@@ -53,10 +47,8 @@ function findById(scheme_id) { // EXERCISE B
         },
         // etc
       ]
-
     4B- Using the array obtained and vanilla JavaScript, create an object with
     the structure below, for the case _when steps exist_ for a given `scheme_id`:
-
       {
         "scheme_id": 1,
         "scheme_name": "World Domination",
@@ -74,9 +66,7 @@ function findById(scheme_id) { // EXERCISE B
           // etc
         ]
       }
-
     5B- This is what the result should look like _if there are no steps_ for a `scheme_id`:
-
       {
         "scheme_id": 7,
         "scheme_name": "Have Fun!",
@@ -90,7 +80,6 @@ function findSteps(scheme_id) { // EXERCISE C
     1C- Build a query in Knex that returns the following data.
     The steps should be sorted by step_number, and the array
     should be empty if there are no steps for the scheme:
-
       [
         {
           "step_id": 5,
@@ -129,3 +118,12 @@ module.exports = {
   add,
   addStep,
 }
+
+
+
+
+
+
+
+
+
